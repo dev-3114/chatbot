@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperMind AI - Research Paper Chatbot</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PDF.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    
+    <!-- Marked.js for Markdown Parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <!-- Chat Header -->
+            <header class="chat-header">
+                <div class="header-doc-status">
+                    <div id="status-indicator" class="status-indicator disconnected"></div>
+                    <span id="status-text">No active paper loaded</span>
+                </div>
+                <div class="header-actions">
+                    <button id="clear-chat-btn" class="icon-btn border-btn" title="Clear chat history" disabled>
+                        <i data-lucide="trash-2"></i>
+                        <span>Clear Chat</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Message Container -->
+            <div id="chat-messages" class="chat-messages">
+                <!-- Welcome Message / Empty State -->
+                <div id="welcome-state" class="welcome-state">
+                    <div class="welcome-icon">
+                        <i data-lucide="bot-message-square"></i>
+                    </div>
+                    <h2>Welcome to PaperMind AI</h2>
+                    <p>Load your research paper to begin asking smart, precise questions powered by Google Gemini. The assistant will read, analyze, and synthesize answers based directly on your document.</p>
+                    
+                    <div class="steps-guide">
+                        <h3>Getting Started</h3>
+                        <ol>
+                            <li>Enter your <strong>Gemini API Key</strong> in the sidebar.</li>
+                            <li>Upload your <strong>research paper (PDF, TXT, or MD)</strong> or load the demo paper.</li>
+                            <li>Start typing questions in the chat!</li>
+                        </ol>
+                    </div>
+                    
+                    <!-- Quick Suggestions (dynamically shown or hidden) -->
+                    <div id="suggestions-box" class="suggestions-box hidden">
+                        <h4>Suggested Questions</h4>
+                        <div id="suggestions-list" class="suggestions-list">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input Area -->
+            <footer class="chat-footer">
+                <div class="input-panel">
+                    <div class="textarea-container">
+                        <textarea id="chat-input" placeholder="Ask a question about the loaded research paper..." rows="1" disabled></textarea>
+                    </div>
+                    <button id="send-btn" class="primary-btn" disabled>
+                        <i data-lucide="send"></i>
+                    </button>
+                </div>
+                <div class="footer-info">
+                    <span id="token-counter" class="hidden">Context Size: ~0 tokens</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <!-- Application Logic -->
+    <script src="app.js"></script>
+</body>
+</html>

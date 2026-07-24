@@ -1,0 +1,10 @@
+{
+  "name": "research-chatbot",
+  "version": "1.0.0",
+  "description": "Research chatbot frontend with a built-in backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}
