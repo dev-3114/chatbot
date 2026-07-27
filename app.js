@@ -2,7 +2,7 @@
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
 
 // Application State
-const DEFAULT_API_KEY = 'PAQ.Ab8RN6KxaI4fR-pztsNdYgSx3NDiy23BiMXUaE9LfnAsNS_cOA'; // Paste your API key here if you later connect a remote model.
+const DEFAULT_API_KEY = 'Paste your API key'; // Paste your API key here if you later connect a remote model.
 const state = {
     apiKey: localStorage.getItem('papermind_api_key') || DEFAULT_API_KEY,
     model: localStorage.getItem('papermind_model') || 'gemini-2.5-flash',
