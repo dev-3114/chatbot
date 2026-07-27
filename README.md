@@ -116,5 +116,8 @@ If you encounter any issues, please check:
 3. Your browser supports ES6+ JavaScript features
 
 ---
+## 🎥 Project Demo
+
+https://github.com/user-attachments/assets/027fc8c0-64c8-4cfb-91f4-a6097f9e7df0
 
 Built with ❤️ for researchers and students
